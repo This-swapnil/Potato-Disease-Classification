@@ -1,5 +1,5 @@
-# MLflow-project-template
-MLflow project template
+# Potato Disease Classification
+Potato Disease Classification
 
 ## STEPS -
 

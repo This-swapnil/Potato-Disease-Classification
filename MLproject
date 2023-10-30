@@ -1,4 +1,4 @@
-name: MLflow-app
+name: Potato Disease Classification
 
 conda_env: conda.yaml
 
