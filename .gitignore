@@ -139,6 +139,8 @@ configs/secrets.yaml
 
 # add your env folder here if its there
 mlruns/
+data/*
+logs/running_logs.log
 data/data.zip
 logs/running_logs.log
-
+trail.ipynb

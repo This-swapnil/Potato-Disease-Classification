@@ -5,6 +5,7 @@ import logging
 import time
 import pandas as pd
 import json
+import shutil
 
 
 def read_yaml(path_to_yaml: str) -> dict:
@@ -28,7 +29,21 @@ def save_json(path: str, data: dict) -> None:
 
 
 def unzip_file(source: str, dest: str) -> None:
-    logging.info(f"Extraction Stated...")
+    logging.info(f"Extraction Started...")
     with ZipFile(source, "r") as zip_f:
         zip_f.extractall(dest)
     logging.info(f"Extracted {source} to {dest}")
+
+
+def remove_directories(source: str) -> None:
+    logging.info(f"Deleting unwanted directories...")
+    list_dir = os.listdir(os.path.join(source,'PlantVillage'))
+    wanted_dir = [
+        "Potato___Early_blight",
+        "Potato___healthy",
+        "Potato___Late_blight",
+    ]
+    for dir in list_dir:
+        if dir not in wanted_dir:
+            shutil.rmtree(os.path.join("data/PlantVillage/", dir))
+    logging.info(f"Unwanted directories are deleted!!!")

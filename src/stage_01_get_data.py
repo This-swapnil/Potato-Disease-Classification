@@ -4,7 +4,12 @@ import shutil
 from fileinput import filename
 from tqdm import tqdm
 import logging
-from src.utils.common import read_yaml, create_directories, unzip_file
+from src.utils.common import (
+    read_yaml,
+    create_directories,
+    unzip_file,
+    remove_directories,
+)
 import random
 import urllib.request as req
 
@@ -41,6 +46,7 @@ def main(config_path):
     # Unzip ops
     create_directories([unzip_data_dir])
     unzip_file(source=data_file_path, dest=unzip_data_dir)
+    remove_directories(source=unzip_data_dir)
 
 
 if __name__ == "__main__":
