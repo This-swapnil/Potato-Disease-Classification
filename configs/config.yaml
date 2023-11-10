@@ -1,6 +1,17 @@
 # It contains all the configs required in the project
 source_data:
-  url: "https://storage.googleapis.com/kaggle-data-sets/1125279/1888915/bundle/archive.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20231030%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20231030T160815Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=94e7c959cf58d6d6ee531d741379870af36091d03b83aefe46888fc302e8245a7665da1d8b5492e7cdd4b9dc259090a7069fa42347f7258c8d52efe4aeaa3fa8dd20479951f0f8e929ae36eae970bad70972788122509e9ecec2cc15f999afb1056ee5a89e3627ab2f947ed1ecad120f75f71556faab767943536c60b444853e85caf55822ee47debae36dbd98c1fb7866ee88e19e3c45131a88d74bfb9a10da16e94a5aa095b90d4d6bfa3c4796a740ab6144463470c9dfae1fe8818419068ac594a171b1e08b1300beb1fba0822e7de988b48ba1f7ce1500e5568ed81f468acc00a91b4a538343acbd012d5e255c37d73068a2972625b81889a58118e92634"
+  url: "https://storage.googleapis.com/kaggle-data-sets/414960/793497/bundle/archive.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20231108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20231108T084625Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=470b60d012874a73158432653901436b566f7fe150a43cfdfdf54b4d6a3baa5e1911cd3c2b30a40f96883c602f76d70e936276dfc6c1100169a322bf1d9f45003ee3bd6a0b7d14413490c5061adf70373a581ebce8d111baeb53c424d2edf187a1b1913e8721eccdcb18d09f4e594fb6ef4ea061c10f46ad9380aaab8287b36300eb0a3a45da7f6ac199b1d94a6cbdfe120fa38d74167743a5fefe094c95f238926647eaedbd790ccc1e73b674ee3e050cff6cbba71c8d88939ca292d01d687bff1861edd46e73d13767533a80de961b1ccd2d3e8bb4ee1f0a0f70ef1ccec07e7b1d9b5f4cf7aba6f41529cccd2c722bf5dcf50832e6b296fc0bb71afc6c360e"
   local_dir: data
   data_file: data.zip
   unzip_data: data
+  parent_data_dir: Potato
+  model_dir: model
+  init_model_file: model.h5
+
+params:
+  img_size: [ 256, 256, 3 ]
+  lr: 0.01
+  loss: sparse_categorical_crossentropy
+  metrics: [ "Accuracy" ]
+  BATCH_SIZE: 32
+  class_no: 3
