@@ -13,10 +13,10 @@ params:
   img_size: [ 256, 256, 3 ]
   lr: 0.01
   loss: sparse_categorical_crossentropy
-  metrics: [ "Accuracy" ]
+  metrics: [ "accuracy" ]
   BATCH_SIZE: 32
   class_no: 3
   validation_split: 0.2
   seed: 42
   buffer_size: 32
-  epochs: 2
+  epochs: 50

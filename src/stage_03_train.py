@@ -41,6 +41,7 @@ def train(
         image_size=params["img_size"][:-1],
         batch_size=params["BATCH_SIZE"],
     )
+    print(f"Class Names: {train_ds.class_names}")
     val_ds = tf.keras.preprocessing.image_dataset_from_directory(
         PARENT_DIR,
         validation_split=params["validation_split"],
@@ -82,7 +83,7 @@ def train(
 
     history = classifier.fit(train_ds, epochs=params["epochs"], validation_data=val_ds)
 
-    print(f"History keys: \n{history.history.keys()}")
+    # print(f"History keys: \n{history.history.keys()}")
 
     trained_model_file = os.path.join(
         config["source_data"]["local_dir"],
@@ -94,15 +95,15 @@ def train(
     logging.info(f"trained model is saved at : {trained_model_file}")
 
     # logging acc and loss
-    acc = history.history["Accuracy"]
-    val_acc = history.history["val_Accuracy"]
+    acc = history.history["accuracy"]
+    val_acc = history.history["val_accuracy"]
     logging.info(
-        f"\nTraining Accuracy : {acc} and Validation accuracy{val_acc}"
+        f"\nTraining Accuracy : {acc[-1]} and Validation accuracy{val_acc[-1]}"
     )
 
     loss = history.history["loss"]
     val_loss = history.history["val_loss"]
-    logging.info(f"\nTraining loss : {loss} and Validation loss{val_acc}")
+    logging.info(f"\nTraining loss : {loss[-1]} and Validation loss{val_acc[-1]}")
 
     ## Saving the "Training and Validation Accuracy" and "Training and Validation Loss" graph
     plt.figure(figsize=(8, 8))
