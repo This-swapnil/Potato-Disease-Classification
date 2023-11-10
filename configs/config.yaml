@@ -4,9 +4,10 @@ source_data:
   local_dir: data
   data_file: data.zip
   unzip_data: data
-  parent_data_dir: Potato
+  parent_data_dir: PlantVillage
   model_dir: model
   init_model_file: model.h5
+  trained_model_file: trained_model.h5
 
 params:
   img_size: [ 256, 256, 3 ]
@@ -15,3 +16,7 @@ params:
   metrics: [ "Accuracy" ]
   BATCH_SIZE: 32
   class_no: 3
+  validation_split: 0.2
+  seed: 42
+  buffer_size: 32
+  epochs: 2
