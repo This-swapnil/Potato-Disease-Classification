@@ -97,12 +97,12 @@ def train(
     acc = history.history["Accuracy"]
     val_acc = history.history["val_Accuracy"]
     logging.info(
-        f"\nTraining Accuracy : {trained_model_file} and Validation accuracy{val_acc}"
+        f"\nTraining Accuracy : {acc} and Validation accuracy{val_acc}"
     )
 
     loss = history.history["loss"]
     val_loss = history.history["val_loss"]
-    logging.info(f"\nTraining loss : {trained_model_file} and Validation loss{val_acc}")
+    logging.info(f"\nTraining loss : {loss} and Validation loss{val_acc}")
 
     ## Saving the "Training and Validation Accuracy" and "Training and Validation Loss" graph
     plt.figure(figsize=(8, 8))
