@@ -35,7 +35,6 @@ def main(config_path):
     img = plt.imread(
         "data/PlantVillage/Potato___healthy/1a1184f8-c414-4ead-a4c4-41ae78e29a82___RS_HL 1971.JPG"
     )
-    plt.show()
 
     def predict(model, img):
         class_name = [
@@ -55,13 +54,12 @@ def main(config_path):
         return predicted_class, confidence
 
     result = predict(model, img)
-    print(result)
+    return result
 
 
 if __name__ == "__main__":
     args = argparse.ArgumentParser()
     args.add_argument("--config", "-c", default="configs/config.yaml")
-    args.add_argument("--params", "-p", default="params.yaml")
     parsed_args = args.parse_args()
 
     try:
