@@ -139,8 +139,10 @@ configs/secrets.yaml
 
 # add your env folder here if its there
 mlruns/
-data/*
+data/PlantVillage
 logs/running_logs.log
 data/data.zip
 logs/running_logs.log
 trail.ipynb
+src.egg-info
+.ipynb_checkpoints
